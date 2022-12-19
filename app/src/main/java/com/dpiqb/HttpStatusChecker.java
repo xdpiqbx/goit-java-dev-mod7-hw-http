@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class HttpStatusChecker {
 
-    public String getStatusImage(int code){
+    public String getStatusImage(int code) throws IllegalArgumentException{
         try {
             URL url = new URL(createUrl(code));
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
