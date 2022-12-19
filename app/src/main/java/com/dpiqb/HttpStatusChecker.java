@@ -14,9 +14,7 @@ public class HttpStatusChecker {
             con.setRequestMethod("GET");
             int status = con.getResponseCode();
             if(status == 404){
-                throw new IllegalArgumentException(
-                    "Status code [" + code + "] does not support. " + createUrl(status)
-                );
+                throw new IllegalArgumentException(code+"");
             }
             return url.toString();
         } catch (IOException e) {

@@ -22,10 +22,6 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.0.1-jre'
-
-    // https://mvnrepository.com/artifact/org.projectlombok/lombok
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 application {
