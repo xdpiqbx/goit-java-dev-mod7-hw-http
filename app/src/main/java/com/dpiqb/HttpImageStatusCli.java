@@ -31,13 +31,11 @@ public class HttpImageStatusCli {
 
                 try {
                     int code = Integer.parseInt(input);
-
                     //in http specification status code max is - 599
                     if(code > 599){
                         System.out.println(ASK_FOR_VALID_DATA);
                         continue;
                     }
-
                     // if everything ok
                     httpStatusImageDownloader.downloadStatusImage(code);
                     System.out.println(DOWLOADED);
