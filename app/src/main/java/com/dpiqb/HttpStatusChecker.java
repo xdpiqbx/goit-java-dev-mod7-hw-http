@@ -7,21 +7,21 @@ import java.net.URL;
 
 public class HttpStatusChecker {
 
-    public String getStatusImage(int code){
-        try {
-            URL url = new URL(createUrl(code));
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-            int status = con.getResponseCode();
-            if(status == 404){
-                throw new IllegalArgumentException(code+"");
-            }
-            return url.toString();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+  public String getStatusImage(int code){
+    try {
+      URL url = new URL(createUrl(code));
+      HttpURLConnection con = (HttpURLConnection) url.openConnection();
+      con.setRequestMethod("GET");
+      int status = con.getResponseCode();
+      if(status == 404){
+        throw new IllegalArgumentException(code+"");
+      }
+      return url.toString();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
-    private String createUrl(int code){
-        return "https://http.cat/" + code + ".jpg";
-    }
+  }
+  private String createUrl(int code){
+    return "https://http.cat/" + code + ".jpg";
+  }
 }
